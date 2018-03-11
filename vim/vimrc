@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'kien/ctrlp.vim'
 " Bundle 'sukima/xmledit'
@@ -21,6 +21,7 @@ Bundle 'scrooloose/nerdtree'
 " Bundle 'scrooloose/syntastic'
 " Bundle 't9md/vim-quickhl'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/bash-support.vim'
 " Bundle 'scrooloose/nerdcommenter'
 " Bundle 'majutsushi/tagbar'
 " Bundle 'fatih/vim-go'
@@ -80,6 +81,8 @@ set cul
 vnoremap <silent> <C-T> :<C-u>Ydv<CR>
 nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
+
+
 
 
 
