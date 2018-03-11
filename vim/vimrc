@@ -11,21 +11,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'kien/ctrlp.vim'
-" Bundle 'sukima/xmledit'
-" Bundle 'sjl/gundo.vim'
-" Bundle 'jiangmiao/auto-pairs'
-" Bundle 'klen/python-mode'
-" Bundle 'Valloric/ListToggle'
-" Bundle 'SirVer/ultisnips'
-" Bundle 'scrooloose/syntastic'
-" Bundle 't9md/vim-quickhl'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Yggdroot/indentLine'
-" Bundle 'scrooloose/nerdcommenter'
-" Bundle 'majutsushi/tagbar'
-" Bundle 'fatih/vim-go'
+Bundle 'fatih/vim-go'
 
 
 " The following are examples of different formats supported.
