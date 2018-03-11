@@ -43,14 +43,13 @@ filetype plugin indent on    " required
 
 
 " 设置制表符等于多少空格
-set tabstop=2
-set softtabstop=2
+set tabstop=2 " 配置一个TAB占用多少个空格
+set softtabstop=1 " 每次退格将删除X个空格
+set shiftwidth=2 " 使用每层缩进的空格数
 set autoindent
 set autoread  " 设置文件修改时自动reload
 set syntax=on " 配置语法高亮
 set ignorecase " 设置搜索时忽略大小写
-
-set ts=2
 set expandtab
 set number
 
