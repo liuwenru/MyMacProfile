@@ -1,6 +1,6 @@
+"  ++++++++++++++++VundleVim-START++++++++++++++++
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -22,6 +22,7 @@ Bundle 'scrooloose/nerdtree'
 " Bundle 't9md/vim-quickhl'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/bash-support.vim'
+Bundle 'Yggdroot/indentLine'
 " Bundle 'scrooloose/nerdcommenter'
 " Bundle 'majutsushi/tagbar'
 " Bundle 'fatih/vim-go'
@@ -44,28 +45,22 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"  ++++++++++++++++VundleVim-END++++++++++++++++
 
 
 
 
-" 配置NEDTree的配置
-let NERDTreeWinPos='left'
-let NERDTreeWinSize=30
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map wm :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
-" Tagbar配置
-nmap <F8> :TagbarToggle<CR>
-
+"  ++++++++++++++++VIM 文本编辑器相关配置+++++++++++++++++
 
 
 " 设置制表符等于多少空格
 set tabstop=2
 set softtabstop=2
 set autoindent
+set autoread  " 设置文件修改时自动reload
+set syntax=on " 配置语法高亮
+set ignorecase " 设置搜索时忽略大小写
+
 set ts=2
 set expandtab
 set number
@@ -77,39 +72,30 @@ set cursorcolumn
 set cul
 
 
+"  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
+" 配置NEDTree的配置
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=30
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map wm :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Tagbar配置
+nmap <F8> :TagbarToggle<CR>
+
 " 有道词典配置
-vnoremap <silent> <C-T> :<C-u>Ydv<CR>
-nnoremap <silent> <C-T> :<C-u>Ydc<CR>
-noremap <leader>yd :<C-u>Yde<CR>
+" vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+" nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+" noremap <leader>yd :<C-u>Yde<CR>
+"
+"
 
 
+" YouCompleteMe插件配置
+let g:ycm_seed_identifiers_with_syntax=1 " 开启基于语义的补全
+let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
+let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
 
-
-
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
+" CTags 配置
+let Tlist_Use_Right_Window = 1
