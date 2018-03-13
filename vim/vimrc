@@ -43,8 +43,8 @@ filetype plugin indent on    " required
 
 
 " 设置制表符等于多少空格
-set tabstop=2 " 配置一个TAB占用多少个空格
-set softtabstop=1 " 每次退格将删除X个空格
+set ts=2 " 配置一个TAB占用多少个空格
+set softtabstop=2 " 每次退格将删除X个空格
 set shiftwidth=2 " 使用每层缩进的空格数
 set autoindent
 set autoread  " 设置文件修改时自动reload
