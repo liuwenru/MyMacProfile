@@ -52,7 +52,7 @@ set syntax=on " 配置语法高亮
 set ignorecase " 设置搜索时忽略大小写
 set expandtab
 set number
-
+set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
 
 
 " 配置显示横竖定位符
