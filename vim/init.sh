@@ -19,6 +19,6 @@
 
 
 
-ln -s ${pwd}/vim/colors  ~/.vim/colors 
+ln -s $(pwd)/colors  ~/.vim/colors 
 
 
