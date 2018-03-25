@@ -51,7 +51,7 @@ set autoread  " 设置文件修改时自动reload
 set syntax=on " 配置语法高亮
 set ignorecase " 设置搜索时忽略大小写
 set expandtab  " 配置使用空格代替空格
-set tabstop=4  " 配置tab占用的空格数量
+set tabstop=2  " 配置tab占用的空格数量
 set number
 set backspace=2 " 兼容mac 下vim的退格键配置
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
