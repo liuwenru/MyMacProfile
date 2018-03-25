@@ -63,6 +63,33 @@ set cursorcolumn
 set cul
 
 
+function! TitleInsert()
+	call setline(1,"# -*- coding: utf-8 -*-")
+	call append(1,'""""')
+	call append(2,"Program: ")
+	call append(3,"Description: ")
+	call append(4,"Author: ijarvis@sina.com")
+	call append(5,"Date: " . strftime("%Y-%m-%d %H:%M:%S"))
+	call append(6,"Last modified: " . strftime("%Y-%m-%d %H:%M:%S"))
+	call append(8,'"""')
+endfunction
+
+function! DateInsert()
+	call cursor(7,1)
+	if search('Last modified') != 0
+		let line = line('.')
+		call setline(line,"Last modified: " . strftime("%Y-%m-%d %H:%M:%S"))
+	endif
+endfunction
+
+:map <F2> :call TitleInsert()<CR>ggjjA
+:autocmd FileWritePre,BufWritePre *.py ks|call DateInsert()|'s
+
+
+
+
+
+
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " 配置NEDTree的配置
 let NERDTreeWinPos='left'
