@@ -62,7 +62,7 @@ colorscheme solarized
 " 配置显示横竖定位符
 set cursorcolumn
 set cul
-
+set encoding=utf-8
 
 " 配置py文件自定添加前面的文件编码
 function! TitleInsert()
