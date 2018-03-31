@@ -74,7 +74,7 @@ endfunction
 :map <F2> :call TitleInsert()<CR>ggjjA
 
 
-
+let g:ycm_python_binary_path = 'python'
 
 
 
