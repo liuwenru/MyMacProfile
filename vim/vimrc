@@ -67,13 +67,7 @@ set cul
 set encoding=utf-8
 
 " 配置py文件自定添加前面的文件编码
-function! TitleInsert()
-	call setline(1,"# -*- coding: utf-8 -*-")
-endfunction
-
-:map <F2> :call TitleInsert()<CR>ggjjA
-
-
+:imap py # -*- coding: utf-8 -*-
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " 配置NEDTree的配置
