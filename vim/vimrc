@@ -74,9 +74,6 @@ endfunction
 :map <F2> :call TitleInsert()<CR>ggjjA
 
 
-let g:ycm_python_binary_path = 'python'
-
-
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " 配置NEDTree的配置
