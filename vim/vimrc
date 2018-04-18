@@ -112,9 +112,4 @@ let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-
-
-" 修复在virtualenv中python代码提示的问题
 let g:ycm_python_binary_path = 'python'
-
-
