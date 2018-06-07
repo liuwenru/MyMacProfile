@@ -17,6 +17,7 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fatih/vim-go'
+Plugin 'marijnh/tern_for_vim'
 
 
 " The following are examples of different formats supported.
