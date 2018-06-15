@@ -50,7 +50,7 @@ set ts=2 " 配置一个TAB占用多少个空格
 set softtabstop=2 " 每次退格将删除X个空格
 set shiftwidth=2 " 使用每层缩进的空格数
 set autoindent
-set autoread  " 设置文件修改时自动reload
+"set autoread  " 设置文件修改时自动reload
 set syntax=on " 配置语法高亮
 set ignorecase " 设置搜索时忽略大小写
 set expandtab  " 配置使用空格代替空格
@@ -67,8 +67,6 @@ set cursorcolumn
 set cul
 set encoding=utf-8
 
-" 配置py文件自定添加前面的文件编码
-:nmap py # -*- coding: utf-8 -*-
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " 配置NEDTree的配置
@@ -77,10 +75,10 @@ let NERDTreeWinSize=30
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map wm :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Tagbar配置
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 
 " 有道词典配置
 " vnoremap <silent> <C-T> :<C-u>Ydv<CR>
@@ -90,16 +88,26 @@ nmap <F8> :TagbarToggle<CR>
 "
 
 " Yggdroot/indentLine 显示渐进线的插件配置
-let g:indentLine_char='┆'
-let g:indentLine_enabled = 1
+" let g:indentLine_char='┆'
+" let g:indentLine_enabled = 1
 
 " YouCompleteMe插件配置
 let g:ycm_seed_identifiers_with_syntax=1 " 开启基于语义的补全
 let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
 let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
+let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
+set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_key_invoke_completion = '<c-z>' " 使用ctrl+z 开始基于语义的提示
+let g:ycm_filetype_whitelist = { 
+			\ "objc":1,
+			\ "txt":1,
+			\ "log":1,
+\ }
+
 
 " CTags 配置
-let Tlist_Use_Right_Window = 1
+" let Tlist_Use_Right_Window = 1
 
 
 
@@ -113,4 +121,3 @@ let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:ycm_python_binary_path = 'python'
