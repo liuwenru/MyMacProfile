@@ -18,7 +18,6 @@ Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fatih/vim-go'
 Bundle 'ervandew/supertab'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'marijnh/tern_for_vim'
 
 
