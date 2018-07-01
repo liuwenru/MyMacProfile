@@ -17,7 +17,6 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fatih/vim-go'
-Bundle 'ervandew/supertab'
 Plugin 'marijnh/tern_for_vim'
 
 
