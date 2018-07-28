@@ -17,6 +17,7 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fatih/vim-go'
+Bundle 'tenfyzhong/CompleteParameter.vim'
 Plugin 'marijnh/tern_for_vim'
 
 
@@ -121,3 +122,14 @@ let g:airline_right_sep = '◀'
 " 
 autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
 autocmd BufNewFile,BufRead makefile setlocal noexpandtab
+
+
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+
+
+
+
