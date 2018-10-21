@@ -61,8 +61,9 @@ set backspace=2 " 兼容mac 下vim的退格键配置
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
 syntax enable
 " let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
+colorscheme monokai
 " 配置显示横竖定位符
 set cursorcolumn
 set cul
