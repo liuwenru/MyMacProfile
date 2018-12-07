@@ -64,6 +64,7 @@ syntax enable
 " let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+" colorscheme monokai
 " 配置显示横竖定位符
 set cursorcolumn
 set cul
@@ -100,6 +101,7 @@ let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预
 " let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let $PATH='/usr/local/bin:$PATH'
 let g:ycm_log_level = 'debug'
 set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
 let g:ycm_add_preview_to_completeopt = 0
