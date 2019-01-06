@@ -105,12 +105,19 @@ let $PATH='/usr/local/bin:$PATH'
 let g:ycm_log_level = 'debug'
 set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
 let g:ycm_add_preview_to_completeopt = 0
-
+let g:ycm_key_invoke_completion = '<c-z>' " 设置ycm的不全功能的唤出
+let g:ycm_semantic_triggers =  {
+      \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+      \ 'cs,lua,javascript': ['re!\w{2}'],
+      \ }
 " C语言插件支持
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
 " CTags 配置
 " let Tlist_Use_Right_Window = 1
+" 配置代码跳转支持
+
+
 
 
 
@@ -138,6 +145,7 @@ imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 
-
+set tags=tags
+let Tlist_Ctags_Cmd = '/usr/local/ctags/bin/ctags'
 
 
