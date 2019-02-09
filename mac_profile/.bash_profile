@@ -32,11 +32,17 @@ source ~/.git-completion.bash
 # 一些python里面的工具位置
 # poerline 的配置
 export PATH=${HOME}/.local/bin:$PATH
-export PYTHONPATH=~/MyCompileSoftware/powerline:${PYTHONPATH}
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. ~/MyCompileSoftware/powerline/powerline/bindings/bash/powerline.sh
+#export PYTHONPATH=~/MyCompileSoftware/powerline:${PYTHONPATH}
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. ~/MyCompileSoftware/powerline/powerline/bindings/bash/powerline.sh
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 
 
