@@ -37,6 +37,7 @@ export PATH=${HOME}/.local/bin:$PATH
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
 #. ~/MyCompileSoftware/powerline/powerline/bindings/bash/powerline.sh
+# 使用b-ryan/powerline-shell的配置
 function _update_ps1() {
     PS1=$(powerline-shell $?)
 }
