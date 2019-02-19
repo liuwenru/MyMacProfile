@@ -38,6 +38,10 @@
           "function": "powerline_gitstatus.gitstatus",
           "priority": 60
       },
+      {
+          "function": "powerline_svnstatus.svnstatus",
+          "priority": 40
+      },
 			{
 				"function": "powerline.segments.common.env.virtualenv",
 				"priority": 50
