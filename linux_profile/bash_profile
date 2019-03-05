@@ -1,0 +1,19 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+export PATH=/usr/local/mysql/bin:/opt/qemu-3.0.0/bin:/usr/local/ctags/bin:/usr/local/cscope/bin:$PATH
+export ANT_HOME=/usr/local/ant
+export PATH=$ANT_HOME/bin:$PATH
+
+export PATH=/opt/gradle/bin:$PATH
+
+export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
