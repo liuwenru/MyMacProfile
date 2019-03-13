@@ -15,5 +15,7 @@ export PATH=$ANT_HOME/bin:$PATH
 
 export PATH=/opt/gradle/bin:$PATH
 
-export PATH="$HOME/.jenv/bin:$PATH"
-#eval "$(jenv init -)"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+
+[ -s "/home/ijarvis/.jabba/jabba.sh" ] && source "/home/ijarvis/.jabba/jabba.sh"

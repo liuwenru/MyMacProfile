@@ -1,55 +1,60 @@
 {
-	"dividers": {
-		"left": {
-			"hard": " ",
-			"soft": " "
-		},
-		"right": {
-			"hard": " ",
-			"soft": " "
-		}
-	},
-	"segments": {
-		"left": [
-			{
-				"function": "powerline.segments.common.time.date",
-				"name": "time",
-				"args": {
-					"format": "%Y-%m-%d-%H:%M",
-					"istime": true
-				}
-			},
-			{
-				"function": "powerline.segments.shell.mode"
-			},
-			{
-				"function": "powerline.segments.common.net.hostname",
-				"priority": 10,
+  "dividers": {
+    "left": {
+      "hard": " ",
+      "soft": " "
+    },
+    "right": {
+      "hard": " ",
+      "soft": " "
+    }
+  },
+  "segments": {
+    "left": [
+      {
+        "function": "powerline.segments.common.time.date",
+        "name": "time",
+        "args": {
+          "format": "%Y-%m-%d-%H:%M",
+          "istime": true
+        }
+      },
+      {
+        "function": "powerline.segments.shell.mode"
+      },
+      {
+        "function": "powerline.segments.common.net.hostname",
+        "priority": 10,
         "args":{
           "exclude_domain": true,
           "only_if_ssh":true
         }
-			},
-			{
-				"function": "powerline.segments.common.env.user",
-				"priority": 30
-			},
-      {
-          "function": "powerline_gitstatus.gitstatus",
-          "priority": 60
       },
       {
-          "function": "powerline_svnstatus.svnstatus",
-          "priority": 40
+        "function": "powerline.segments.common.env.user",
+        "priority": 30
       },
-			{
-				"function": "powerline.segments.common.env.virtualenv",
-				"priority": 50
-			},
-			{
-				"function": "powerline.segments.shell.cwd",
-				"priority": 10
-			}
-		]
-	}
+      {
+        "function": "powerline_gitstatus.gitstatus",
+        "priority": 60
+      },
+      {
+        "function": "powerline_svnstatus.svnstatus",
+        "priority": 40
+      },
+      {
+        "function": "powerline.segments.common.env.virtualenv",
+        "priority": 50
+      },
+      {
+        "function": "powerline.segments.shell.cwd",
+        "priority": 10,
+        "args":{
+          "dir_shorten_len": 2,
+          "use_shortened_path":true ,
+          "dir_limit_depth": 2
+        }
+      }
+    ]
+  }
 }
