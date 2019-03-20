@@ -50,7 +50,6 @@
         "function": "powerline.segments.shell.cwd",
         "priority": 10,
         "args":{
-          "dir_shorten_len": 2,
           "use_shortened_path":true ,
           "dir_limit_depth": 2
         }
