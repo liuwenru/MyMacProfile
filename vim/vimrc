@@ -9,9 +9,10 @@ Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'https://github.com/fatih/vim-go.git'
 " 代码文件着色插件
 Plug 'https://github.com/flazz/vim-colorschemes.git'
+" 代码缩进显示
+Plug 'https://github.com/Yggdroot/indentLine.git'
 
 " powerline状态栏
-
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 call plug#end()
@@ -71,17 +72,19 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_theme='powerlineish'
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
 
+" indentLine 代码缩进控制
+let g:indentLine_setColors = 0
+" let g:indentLine_color_term = 239
+" let g:indentLine_bgcolor_term = 202
+" let g:indentLine_char = 'c'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-"
-"
-" 解决打开解决json文件自动隐藏双引号的问题
-let g:indentLine_setConceal = 0
-
-
-" Yggdroot/indentLine 显示渐进线的插件配置
-" let g:indentLine_char='┆'
-" let g:indentLine_enabled = 1
 
 " " YouCompleteMe插件配置
 " let g:ycm_seed_identifiers_with_syntax=1 " 开启基于语义的补全
@@ -105,38 +108,3 @@ let g:indentLine_setConceal = 0
 " " CTags 配置
 " let Tlist_Use_Right_Window = 1
 " 
-" 
-" 
-" 
-" 
-" " vim-airline 配置
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#formatter = 'default'
-" let g:airline_theme='powerlineish'
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" 
-" 
-" 
-" " 
-" autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
-" autocmd BufNewFile,BufRead makefile setlocal noexpandtab
-" 
-" 
-" " inoremap <silent><expr> ( complete_parameter#pre_complete("()")
-" smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-" imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-" smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-" imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-" 
-" set tags=tags
-" let Tlist_Ctags_Cmd = '/usr/local/ctags/bin/ctags'
-" 
-" " Conque-GDB 配置
-" let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
-" let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
-" let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly  
