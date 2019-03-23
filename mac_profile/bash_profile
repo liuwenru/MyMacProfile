@@ -23,7 +23,7 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # Go开发配置
 [[ -s "/Users/ijarvis/.gvm/scripts/gvm" ]] && source "/Users/ijarvis/.gvm/scripts/gvm"
-export GOPATH=~/vmworkspace/goworkspace
+export GOPATH=~/workspace/goworkspace
 export PATH=$PATH:$GOPATH/bin
 
 # git自动补全插件
