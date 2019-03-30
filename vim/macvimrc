@@ -20,6 +20,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " YouCompleteMe 自动生成ycm_extra_conf.py配置文件
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'https://github.com/joshdick/onedark.vim.git'
 
 call plug#end()
 
@@ -71,7 +72,8 @@ let g:rainbow_active = 1
 
 
 " 代码着色配置
-colorscheme solarized8_dark_high
+" colorscheme solarized8_dark_high
+colorscheme onedark
 
 " vim-airline 插件配置
 let g:airline#extensions#tabline#enabled = 1
@@ -100,9 +102,9 @@ let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
 let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
 let g:ycm_log_level = 'debug'
 " 语言符号库文件库配置文件
-let g:ycm_global_ycm_extra_conf='~/MyMacProfile/vim/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/Tools/MyMacProfile/vim/ycm_extra_conf.py'
 " let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
+let g:ycm_server_python_interpreter = 'python3'
 " let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2'
 " set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
 let g:ycm_add_preview_to_completeopt = 0
@@ -111,4 +113,16 @@ let g:ycm_semantic_triggers =  {
       \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}','.'],
       \ 'cs,lua,javascript': ['re!\w{2}'],
       \ }
+
+
+" Go 开发配置
+
+let g:go_fmt_command = "goimports"
+let g:go_highlight_operators = 1
+let g:go_def_mode = 'godef'
+let g:go_decls_includes = "func,type"
+
+
+
+
 
