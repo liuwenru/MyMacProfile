@@ -6,7 +6,7 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 " 彩虹括号插件
 Plug 'https://github.com/luochen1990/rainbow.git'
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
-Plug 'https://github.com/fatih/vim-go.git'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " 代码文件着色插件
 Plug 'https://github.com/flazz/vim-colorschemes.git'
 " 代码缩进显示
@@ -21,6 +21,11 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " YouCompleteMe 自动生成ycm_extra_conf.py配置文件
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'https://github.com/flazz/vim-colorschemes.git'
+Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
+Plug 'https://github.com/joshdick/onedark.vim.git'
+
+
 call plug#end()
 
 
@@ -47,8 +52,10 @@ set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式�
 syntax enable
 " let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme onedark
 " colorscheme monokai
+filetype plugin on
 " 配置显示横竖定位符
 set cursorcolumn
 set cul
@@ -101,14 +108,21 @@ let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预
 let g:ycm_log_level = 'debug'
 " 语言符号库文件库配置文件
 let g:ycm_global_ycm_extra_conf='~/MyMacProfile/vim/ycm_extra_conf.py'
-" let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
+let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
 " let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
 " let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2'
 " set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
 let g:ycm_add_preview_to_completeopt = 0
 "let g:ycm_key_invoke_completion = '<A-o>' " 设置ycm的不全功能的唤出
 let g:ycm_semantic_triggers =  {
-      \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}','.'],
+      \ 'c,cpp,python,java,erlang,perl,go': ['re!\w{2}','.'],
       \ 'cs,lua,javascript': ['re!\w{2}'],
       \ }
+
+" Go 语言开发配置
+
+let g:go_fmt_command = "goimports"
+let g:go_highlight_operators = 1
+let g:go_def_mode = 'godef'
+let g:go_decls_includes = "func,type"
 
