@@ -78,7 +78,6 @@ let g:rainbow_active = 1
 
 
 " 代码着色配置
-colorscheme solarized8_dark_high
 
 " vim-airline 插件配置
 let g:airline#extensions#tabline#enabled = 1
