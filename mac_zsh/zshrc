@@ -110,3 +110,6 @@ export PATH=$HOME/.local/bin:/Users/ijarvis/Applications/apache-maven-3.6.3/bin:
 
 
 
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+
+[[ -s "/Users/ijarvis/.gvm/scripts/gvm" ]] && source "/Users/ijarvis/.gvm/scripts/gvm"
