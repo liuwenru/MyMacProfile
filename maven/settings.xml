@@ -88,7 +88,7 @@ under the License.
    | specification in this list marked as active will be used.
    |-->
   <proxies>
-    <proxy>
+    <!-- <proxy>
       <id>localproxy</id>
       <active>true</active>
       <protocol>http</protocol>
@@ -103,7 +103,7 @@ under the License.
       <host>127.0.0.1</host>
       <port>1080</port>
       <nonProxyHosts>127.0.0.1|192.168.201.28|218.4.136.115</nonProxyHosts>
-    </proxy>
+    </proxy> -->
   </proxies>
 
   <!-- servers
@@ -131,11 +131,11 @@ under the License.
       <passphrase>optional; leave empty if not used.</passphrase>
     </server>
     -->
-    <server>
+    <!-- <server>
             <id>epoint-nexus</id>
             <username>epointyanfa</username>
             <password>epoint_yanfa</password>
-    </server>
+    </server> -->
   </servers>
 
   <!-- mirrors
@@ -156,14 +156,14 @@ under the License.
       <name>Nexus aliyun</name>
       <url>http://maven.aliyun.com/repository</url>
     </mirror> -->
-    <!--
-    <mirror>
+    
+    <!-- <mirror>
       <id>epoint-nexus</id>
         <name>Epoint Nexus</name>
         <url>http://192.168.0.99:8081/nexus/content/repositories/aliyunproxy/</url>
       <mirrorOf>*</mirrorOf>
-      </mirror>
-    -->
+    </mirror> -->
+   
   </mirrors>
 
   <!-- profiles
