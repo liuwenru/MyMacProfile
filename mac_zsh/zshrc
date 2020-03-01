@@ -97,6 +97,8 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PATH=/usr/bin:/bin:/usr/local/bin:$PATH
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -s "$HOME/.jabba/jabba.sh" ] && source "$HOME/.jabba/jabba.sh"
 
@@ -105,6 +107,7 @@ export PATH=$HOME/Applications/apache-maven-3.6.3/bin:$HOME/.local/bin:$PATH
 
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+export GO111MODULE="on"
 export GOPATH=$HOME/workspace/golangworkspace
 
 # Python Setting
