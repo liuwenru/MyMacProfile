@@ -106,10 +106,9 @@ let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
 let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
 let g:ycm_log_level = 'debug'
 " 语言符号库文件库配置文件
-let g:ycm_global_ycm_extra_conf='~/MyMacProfile/vim/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/Tools/MyMacProfile/vim/ycm_extra_conf.py'
 let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
-" let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 " set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
 let g:ycm_add_preview_to_completeopt = 0
 "let g:ycm_key_invoke_completion = '<A-o>' " 设置ycm的不全功能的唤出
