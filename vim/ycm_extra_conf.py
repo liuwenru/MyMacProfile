@@ -43,21 +43,7 @@ flags = [
 '-isystem',
 '/usr/include',
 '-isystem',
-'/usr/include/c++/8',
-'-isystem',
-'/usr/local/include',
-'-isystem',
-'/usr/lib/gcc/x86_64-redhat-linux/8',
-'-isystem',
-'/usr/lib/gcc/x86_64-redhat-linux/8/include',
-'-isystem',
-'/usr/lib/gcc/x86_64-redhat-linux/8/include',
-'-isystem',
-'/usr/include/c++/8',
-'-isystem',
-'/usr/src/kernels/4.20.16-200.fc29.x86_64',
-'-isystem',
-'/usr/src/kernels/4.20.16-200.fc29.x86_64/include'
+'/usr/local/include'
 ]
 
 
