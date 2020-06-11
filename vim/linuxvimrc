@@ -25,7 +25,6 @@ Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nv
 
 Plug 'https://github.com/joshdick/onedark.vim.git'
 
-
 call plug#end()
 
 
@@ -50,11 +49,8 @@ set number
 set backspace=2 " 兼容mac 下vim的退格键配置
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
 syntax enable
-" let g:solarized_termcolors=256
-set background=dark
-" colorscheme solarized
+" set background=dark
 colorscheme onedark
-" colorscheme monokai
 filetype plugin on
 " 配置显示横竖定位符
 set cursorcolumn
@@ -110,6 +106,7 @@ let g:ycm_global_ycm_extra_conf='~/Tools/MyMacProfile/vim/ycm_extra_conf.py'
 "let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
 let g:ycm_server_python_interpreter = 'python3'
 " set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
+set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 "let g:ycm_key_invoke_completion = '<A-o>' " 设置ycm的不全功能的唤出
 let g:ycm_semantic_triggers =  {
