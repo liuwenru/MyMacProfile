@@ -27,7 +27,6 @@ Plug 'https://github.com/airblade/vim-gitgutter'
 " vim 中 outline viewer
 "Plug 'https://github.com/majutsushi/tagbar'
 
-
 call plug#end()
 
 
@@ -115,7 +114,7 @@ let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
 let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
 let g:ycm_log_level = 'debug'
 " 语言符号库文件库配置文件
-let g:ycm_global_ycm_extra_conf='~/tools/MyMacProfile/vim/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/tools/MyMacProfile/vim/ycm_extra_conf_mac.py'
 let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
 " let g:ycm_server_python_interpreter = 'python3'
 " let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2'
