@@ -107,31 +107,3 @@ let g:indentLine_setColors = 0
 autocmd Filetype json let g:indentLine_setConceal = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-
-" " YouCompleteMe插件配置
-" let g:ycm_seed_identifiers_with_syntax=1 " 开启基于语义的补全
-" let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
-" let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
-" let g:ycm_log_level = 'debug'
-" " 语言符号库文件库配置文件
-" let g:ycm_global_ycm_extra_conf='~/tools/MyMacProfile/vim/ycm_extra_conf_mac.py'
-" let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
-" " let g:ycm_server_python_interpreter = 'python3'
-" " let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2'
-" " set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
-" set completeopt-=preview
-" let g:ycm_add_preview_to_completeopt = 0
-" " let g:ycm_key_invoke_completion = '<A-o>' " 设置ycm的不全功能的唤出
-" let g:ycm_semantic_triggers =  {
-"       \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}','.'],
-"       \ 'cs,lua,javascript': ['re!\w{2}'],
-"       \ }
-" 
-" 
-" " Go 开发配置
-" 
-" let g:go_fmt_command = "goimports"
-" let g:go_highlight_operators = 1
-" let g:go_def_mode = 'godef'
-" let g:go_decls_includes = "func,type"
-" 
