@@ -11,6 +11,8 @@ Plug 'https://github.com/joshdick/onedark.vim.git'
 
 " 代码缩进显示
 Plug 'https://github.com/Yggdroot/indentLine.git'
+" 代码自动格式化
+Plug 'https://github.com/Chiel92/vim-autoformat.git'
 
 " powerline状态栏
 Plug 'https://github.com/vim-airline/vim-airline.git'
@@ -25,7 +27,6 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " Golang 开发插件
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 
 
 call plug#end()
@@ -97,7 +98,8 @@ set hidden
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
-
+" vim-format 自动格式化
+noremap <F3> :Autoformat<CR>
 
 " " YouCompleteMe插件配置
 " 解决MAC环境下打开VIM使用系统自带的Python导致错误
