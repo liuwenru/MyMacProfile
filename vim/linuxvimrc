@@ -92,9 +92,6 @@ let g:airline_theme='powerlineish'
 
 " indentLine 代码缩进控制
 let g:indentLine_setColors = 0
-" let g:indentLine_color_term = 239
-" let g:indentLine_bgcolor_term = 202
-" let g:indentLine_char = 'c'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 
@@ -119,7 +116,6 @@ let g:ycm_semantic_triggers =  {
       \ }
 
 " Go 语言开发配置
-
 let g:go_fmt_command = "goimports"
 let g:go_highlight_operators = 1
 let g:go_def_mode = 'godef'
