@@ -5,35 +5,34 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 
 " 彩虹括号插件
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/Chiel92/vim-autoformat.git'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " 代码文件着色插件
 Plug 'https://github.com/flazz/vim-colorschemes.git'
+Plug 'https://github.com/joshdick/onedark.vim.git'
+
 " 代码缩进显示
 Plug 'https://github.com/Yggdroot/indentLine.git'
 
 " powerline状态栏
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-
+Plug 'https://github.com/majutsushi/tagbar.git'
+Plug 'https://github.com/ap/vim-buftabline.git'
 " 代码自动补齐插件
 Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " YouCompleteMe 自动生成ycm_extra_conf.py配置文件
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-Plug 'https://github.com/flazz/vim-colorschemes.git'
-Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
-Plug 'https://github.com/joshdick/onedark.vim.git'
+" Golang 开发插件
+Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
 
 call plug#end()
 
 
 "         Plug 插件配置  [END]
-
-
 "  ++++++++++++++++VIM 文本编辑器相关配置+++++++++++++++++
-
-
 " 设置制表符等于多少空格
 set ts=2 " 配置一个TAB占用多少个空格
 set softtabstop=2 " 每次退格将删除X个空格
@@ -57,7 +56,6 @@ set cursorcolumn
 set cul
 set encoding=utf-8
 
-
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " NEDTree的配置
 let NERDTreeWinPos='left'
@@ -76,13 +74,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 彩虹括号插件, 默认启用插件
 let g:rainbow_active = 1
 
-
 " 代码着色配置
-
 " vim-airline 插件配置
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme='powerlineish'
 "let g:airline_left_sep = '»'
@@ -93,6 +89,14 @@ let g:airline_theme='powerlineish'
 " indentLine 代码缩进控制
 let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" tagbar 显示代码大纲
+nmap <F8> :TagbarToggle<CR>
+" vim-buftabline 配置快速切换vim上的table
+set hidden
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
 
 
 " " YouCompleteMe插件配置
