@@ -5,37 +5,35 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 
 " 彩虹括号插件
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/Chiel92/vim-autoformat.git'
-Plug 'https://github.com/fatih/vim-go.git'
 " 代码文件着色插件
 Plug 'https://github.com/flazz/vim-colorschemes.git'
+Plug 'https://github.com/joshdick/onedark.vim.git'
+
 " 代码缩进显示
 Plug 'https://github.com/Yggdroot/indentLine.git'
+" 代码自动格式化
+Plug 'https://github.com/Chiel92/vim-autoformat.git'
 
 " powerline状态栏
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-
+Plug 'https://github.com/majutsushi/tagbar.git'
+Plug 'https://github.com/ap/vim-buftabline.git'
 " 代码自动补齐插件
-" Plug 'https://github.com/Valloric/YouCompleteMe.git'
+Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " YouCompleteMe 自动生成ycm_extra_conf.py配置文件
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-Plug 'https://github.com/joshdick/onedark.vim.git'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
-" vim 下的git插件
-Plug 'https://github.com/airblade/vim-gitgutter'
-" vim 中 outline viewer
-Plug 'https://github.com/majutsushi/tagbar'
+" Golang 开发插件
+Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 call plug#end()
 
 
 "         Plug 插件配置  [END]
-
-
 "  ++++++++++++++++VIM 文本编辑器相关配置+++++++++++++++++
-
-
 " 设置制表符等于多少空格
 set ts=2 " 配置一个TAB占用多少个空格
 set softtabstop=2 " 每次退格将删除X个空格
@@ -51,15 +49,13 @@ set number
 set backspace=2 " 兼容mac 下vim的退格键配置
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
 syntax enable
-" let g:solarized_termcolors=256
-set background=dark
-" colorscheme monokai
-" colorscheme monokai
+" set background=dark
+colorscheme onedark
+filetype plugin on
 " 配置显示横竖定位符
 set cursorcolumn
 set cul
 set encoding=utf-8
-
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " NEDTree的配置
@@ -73,37 +69,73 @@ map wm :NERDTreeToggle<CR>
 " 当 vim 打开一个目录时，我如何自动打开 NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-" 唯一打开的窗口是一个 NERTree 使用q关闭vim
+" 唯一打开的窗口是一个 NERDTree 使用q 关闭vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " 彩虹括号插件, 默认启用插件
 let g:rainbow_active = 1
 
-
 " 代码着色配置
-" colorscheme solarized8_dark_high
-colorscheme onedark
-
 " vim-airline 插件配置
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
-" 设置vim airline主题样式
 let g:airline_theme='powerlineish'
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-
-" vim outline viewer
-" nmap <F8> :TagbarToggle<CR>
-
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
 
 " indentLine 代码缩进控制
 let g:indentLine_setColors = 0
-" let g:indentLine_color_term = 239
-" let g:indentLine_bgcolor_term = 202
-" let g:indentLine_char = 'c'
-autocmd Filetype json let g:indentLine_setConceal = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" tagbar 显示代码大纲
+" 安装之前请不要忘记安装Ctags，为了使用最新的版本，还是建议使用源码编译安装
+nmap <F8> :TagbarToggle<CR>
+" vim-buftabline 配置快速切换vim上的table
+set hidden
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
+" vim-format 自动格式化  python自动格式化请安装  install autopep8 
+noremap <F3> :Autoformat<CR>
+let g:autoformat_verbosemode=1 "开启详细模式便于查错
+let g:formatdef_sqlformat = '"sqlformat --keywords upper -"' " 启动格式化sql文件 需要安装插件 pip3 install sqlparse
+let g:formatters_sql = ['sqlformat']
+
+let g:formatdef_clangformat_google = '"clang-format -style google -"'  " 自动格式化C 源码文件  安装需要额外插件 yum install clang
+let g:formatters_c = ['clangformat_google']
+
+
+
+
+
+
+" " YouCompleteMe插件配置
+" 解决MAC环境下打开VIM使用系统自带的Python导致错误
+"let $PATH='/usr/local/bin:$PATH'
+let g:ycm_seed_identifiers_with_syntax=1 " 开启基于语义的补全
+let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
+let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
+let g:ycm_log_level = 'debug'
+" 语言符号库文件库配置文件
+let g:ycm_global_ycm_extra_conf='~/tools/MyMacProfile/vim/ycm_extra_conf_mac.py'
+"let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
+let g:ycm_server_python_interpreter = 'python3'
+" set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+"let g:ycm_key_invoke_completion = '<A-o>' " 设置ycm的不全功能的唤出
+let g:ycm_semantic_triggers =  {
+      \ 'c,cpp,python,java,erlang,perl,go': ['re!\w{2}','.'],
+      \ 'cs,lua,javascript': ['re!\w{2}'],
+      \ }
+
+" Go 语言开发配置
+let g:go_fmt_command = "goimports"
+let g:go_highlight_operators = 1
+let g:go_def_mode = 'godef'
+let g:go_decls_includes = "func,type"
 
