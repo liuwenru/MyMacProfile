@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "InconsolataGo,Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "InconsolataGo",
+    "editor.fontSize": 14,
+    "workbench.editor.enablePreview": false,
+    "debug.console.fontSize": 14,
+    "terminal.integrated.fontSize": 14
+}
