@@ -4,5 +4,6 @@
     "editor.fontSize": 14,
     "workbench.editor.enablePreview": false,
     "debug.console.fontSize": 14,
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 14,
+    "workbench.iconTheme": "vscode-icons"
 }
