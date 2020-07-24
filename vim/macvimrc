@@ -115,7 +115,7 @@ let g:formatters_c = ['clangformat_google']
 
 " " YouCompleteMe插件配置
 " 解决MAC环境下打开VIM使用系统自带的Python导致错误
-"let $PATH='/usr/local/bin:$PATH'
+let $PATH .='/usr/local/opt/python@3.7/bin'
 let g:ycm_seed_identifiers_with_syntax=1 " 开启基于语义的补全
 let g:ycm_complete_in_strings = 1        " 在字符串收入中也能补全
 let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预览窗口
