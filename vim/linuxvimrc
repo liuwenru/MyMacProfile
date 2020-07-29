@@ -47,6 +47,7 @@ set shiftwidth=2
 set number
 set backspace=2 " 兼容mac 下vim的退格键配置
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
+set so=5  " 屏幕滚动时在光标上下方保留5行预览代码
 syntax enable
 " set background=dark
 colorscheme onedark
