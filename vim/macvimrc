@@ -34,18 +34,17 @@ call plug#end()
 "         Plug 插件配置  [END]
 "  ++++++++++++++++VIM 文本编辑器相关配置+++++++++++++++++
 " 设置制表符等于多少空格
-set ts=2 " 配置一个TAB占用多少个空格
-set softtabstop=2 " 每次退格将删除X个空格
-set shiftwidth=2 " 使用每层缩进的空格数
+set expandtab  " 配置使用空格代替空格
+set softtabstop=4 " 每次退格将删除X个空格
+set shiftwidth=4 " 使用每层缩进的空格数
+set tabstop=4  " 配置tab占用的空格数量
 set autoindent
 set autoread  " 设置文件修改时自动reload
 set syntax=on " 配置语法高亮
 set ignorecase " 设置搜索时忽略大小写
-set expandtab  " 配置使用空格代替空格
-set tabstop=2  " 配置tab占用的空格数量
-set shiftwidth=2
 set number
 set backspace=2 " 兼容mac 下vim的退格键配置
+set so=5  " 屏幕滚动时在光标上下方保留5行预览代码
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
 syntax enable
 " set background=dark
@@ -55,7 +54,6 @@ filetype plugin on
 set cursorcolumn
 set cul
 set encoding=utf-8
-set enc=utf-8
 set nobackup
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
