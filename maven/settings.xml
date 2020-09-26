@@ -32,7 +32,7 @@ under the License.
  |  2. Global Level. This settings.xml file provides configuration for all Maven
  |                 users on a machine (assuming they're all using the same Maven
  |                 installation). It's normally provided in
- |                 ${maven.conf}/settings.xml.
+ |                 ${maven.home}/conf/settings.xml.
  |
  |                 NOTE: This location can be overridden with the CLI option:
  |
@@ -44,13 +44,13 @@ under the License.
  |
  |-->
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-        <!-- localRepository
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <!-- localRepository
    | The path to the local repository maven will use to store artifacts.
    |
    | Default: ${user.home}/.m2/repository
-  <localRepository>/path/to/local/repo</localRepository>
+  <localRepository>/Users/meros/Documents/.m2/repository</localRepository>
   -->
 
   <!-- interactiveMode
@@ -76,7 +76,7 @@ under the License.
    | "org.apache.maven.plugins" and "org.codehaus.mojo" if these are not already contained in the list.
    |-->
   <pluginGroups>
-          <!-- pluginGroup
+    <!-- pluginGroup
      | Specifies a further group identifier to use for plugin lookup.
     <pluginGroup>com.your.plugins</pluginGroup>
     -->
@@ -88,22 +88,20 @@ under the License.
    | specification in this list marked as active will be used.
    |-->
   <proxies>
-    <!-- <proxy>
-      <id>localproxy</id>
+    <!-- proxy
+     | Specification for one proxy, to be used in connecting to the network.
+     |
+    <proxy>
+      <id>optional</id>
       <active>true</active>
       <protocol>http</protocol>
-      <host>127.0.0.1</host>
-      <port>1080</port>
-      <nonProxyHosts>127.0.0.1|192.168.201.28|218.4.136.115</nonProxyHosts>
+      <username>proxyuser</username>
+      <password>proxypass</password>
+      <host>proxy.host.net</host>
+      <port>80</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
     </proxy>
-    <proxy>
-      <id>localhttpsproxy</id>
-      <active>true</active>
-      <protocol>https</protocol>
-      <host>127.0.0.1</host>
-      <port>1080</port>
-      <nonProxyHosts>127.0.0.1|192.168.201.28|218.4.136.115</nonProxyHosts>
-    </proxy> -->
+    -->
   </proxies>
 
   <!-- servers
@@ -111,7 +109,7 @@ under the License.
    | Authentication profiles can be used whenever maven must make a connection to a remote server.
    |-->
   <servers>
-          <!-- server
+    <!-- server
      | Specifies the authentication information to use when connecting to a particular server, identified by
      | a unique name within the system (referred to by the 'id' attribute below).
      |
@@ -124,6 +122,7 @@ under the License.
       <password>repopwd</password>
     </server>
     -->
+
     <!-- Another sample, using keys to authenticate.
     <server>
       <id>siteServer</id>
@@ -131,11 +130,11 @@ under the License.
       <passphrase>optional; leave empty if not used.</passphrase>
     </server>
     -->
-    <!-- <server>
-            <id>epoint-nexus</id>
-            <username>epointyanfa</username>
-            <password>epoint_yanfa</password>
-    </server> -->
+    <server>
+        <id>epoint-nexus</id>
+        <username>epointyanfa</username>
+        <password>epoint_yanfa</password>
+    </server>
   </servers>
 
   <!-- mirrors
@@ -150,20 +149,24 @@ under the License.
    | server for that repository.
    |-->
   <mirrors>
-    <!-- <mirror>
-      <id>nexus-aliyun</id>
-      <mirrorOf>*</mirrorOf>
-      <name>Nexus aliyun</name>
-      <url>http://maven.aliyun.com/repository</url>
-    </mirror> -->
-    
-    <!-- <mirror>
-      <id>epoint-nexus</id>
-        <name>Epoint Nexus</name>
-        <url>http://192.168.0.99:8081/nexus/content/repositories/aliyunproxy/</url>
-      <mirrorOf>*</mirrorOf>
-    </mirror> -->
-   
+    <!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+     -->
+	<!-- <mirror>
+	  <id>epoint-nexus</id>
+      <name>Epoint Nexus</name>
+      <url>http://192.168.0.99:8081/nexus/content/groups/public/</url>
+	  <mirrorOf>*</mirrorOf>
+	</mirror>  -->
   </mirrors>
 
   <!-- profiles
@@ -188,7 +191,7 @@ under the License.
    |
    |-->
   <profiles>
-          <!-- profile
+    <!-- profile
      | Specifies a set of introductions to the build process, to be activated using one or more of the
      | mechanisms described above. For inheritance purposes, and to activate profiles via <activatedProfiles/>
      | or the command line, profiles have to have an ID that is unique.
@@ -252,99 +255,142 @@ under the License.
       </properties>
     </profile>
     -->
-	<profile>
-	  <id>epoint-nexus</id>
-	  <repositories>
-      <repository>
-        <id>epoint-nexus</id>
-        <name>Epoint Nexus Repository</name>
-        <url>http://192.168.0.99:8081/nexus/content/groups/public/</url>
-		    <releases>
-		      <enabled>true</enabled>
-		    </releases>
-		  <snapshots>
-		    <enabled>true</enabled>
-		  </snapshots>
-      </repository>
-    </repositories>
-	  <pluginRepositories>
-      <pluginRepository>
-        <id>epoint-nexus</id>
-        <name>Epoint Nexus Repository</name>
-        <url>http://192.168.0.99:8081/nexus/content/groups/public/</url>
-		    <releases>
-		    <enabled>true</enabled>
-		    </releases>
-		    <snapshots>
-		      <enabled>true</enabled>
-		    </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-	</profile>
-  <profile>
-	  <id>mvnrepository</id>
-	  <repositories>
-      <repository>
-          <id>mvnrepository</id>
-          <name>mvnrepository</name>
-          <url>http://www.mvnrepository.com/</url>
-          <layout>default</layout>
-          <releases>
+    <profile>
+        <id>alibaba-dev</id>
+        <repositories>
+          <repository>
+            <id>alibaba-central</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-jcenter</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-public</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-google</id>
+            <url>https://maven.aliyun.com/repository/google</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-gradle-plugin</id>
+            <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-spring</id>
+            <url>https://maven.aliyun.com/repository/spring</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-spring-plugin</id>
+            <url>https://maven.aliyun.com/repository/spring-plugin</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>alibaba-grails-core</id>
+            <url>https://maven.aliyun.com/repository/grails-core</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+          <repository>
+            <id>apache-snapshots</id>
+            <url>https://maven.aliyun.com/repository/apache-snapshots</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+          </repository>
+        </repositories>
+    </profile>
+    <profile>
+      <id>epoint-nexus</id>
+      <repositories>
+          <repository>
+            <id>epoint-nexus</id>
+            <name>Epoint Nexus Repository</name>
+            <url>http://192.168.0.99:8081/nexus/content/groups/public/</url>
+        <releases>
+          <enabled>true</enabled>
+        </releases>
+        <snapshots>
+          <enabled>true</enabled>
+        </snapshots>
+          </repository>
+        </repositories>
+      <pluginRepositories>
+          <pluginRepository>
+            <id>epoint-nexus</id>
+            <name>Epoint Nexus Repository</name>
+            <url>http://192.168.0.99:8081/nexus/content/groups/public/</url>
+            <releases>
               <enabled>true</enabled>
-          </releases>
-          <snapshots>
-              <enabled>false</enabled>
-          </snapshots>
-      </repository>
-      <repository>
-          <id>alibaba1</id>
-          <name>mvnrepository</name>
-          <url>https://maven.aliyun.com/repository/jcenter</url>
-          <releases>
+            </releases>
+            <snapshots>
               <enabled>true</enabled>
-          </releases>
-          <snapshots>
-              <enabled>false</enabled>
-          </snapshots>
-      </repository>
-      <repository>
-          <id>alibaba2</id>
-          <name>mvnrepository</name>
-          <url>https://maven.aliyun.com/repository/public</url>
-          <releases>
-              <enabled>true</enabled>
-          </releases>
-          <snapshots>
-              <enabled>false</enabled>
-          </snapshots>
-      </repository>
-      <repository>
-          <id>alibaba3</id>
-          <name>mvnrepository</name>
-          <url>https://maven.aliyun.com/repository/spring</url>
-          <releases>
-              <enabled>true</enabled>
-          </releases>
-          <snapshots>
-              <enabled>false</enabled>
-          </snapshots>
-      </repository>
-      <repository>
-          <id>alibaba4</id>
-          <name>mvnrepository</name>
-          <url>https://maven.aliyun.com/repository/spring-plugin</url>
-          <releases>
-              <enabled>true</enabled>
-          </releases>
-          <snapshots>
-              <enabled>false</enabled>
-          </snapshots>
-      </repository>
-    </repositories>
-	</profile>
-</profiles>
+            </snapshots>
+          </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
 
-<!-- activeProfiles
+  <!-- activeProfiles
    | List of profiles that are active for all builds.
    |
   <activeProfiles>
@@ -353,9 +399,7 @@ under the License.
   </activeProfiles>
   -->
   <activeProfiles>
-          <!--
-          <activeProfile>epoint-nexus</activeProfile>
-          -->    
-          <activeProfile>mvnrepository</activeProfile>
+    <activeProfile>alibaba-dev</activeProfile>
+    <!-- <activeProfile>epoint-nexus</activeProfile> -->
   </activeProfiles>
 </settings>
