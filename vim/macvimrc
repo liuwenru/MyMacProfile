@@ -56,7 +56,7 @@ filetype plugin on
 set cursorcolumn
 set cul
 set encoding=utf-8
-set nobackup
+set nobackup " 不生成备份文件
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " NEDTree的配置

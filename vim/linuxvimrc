@@ -27,6 +27,8 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" 代码搜索插件 安装该插件前，需要先安装 ack ag gt rg
+" Plug 'dyng/ctrlsf.vim'
 
 call plug#end()
 
@@ -54,12 +56,14 @@ filetype plugin on
 set cursorcolumn
 set cul
 set encoding=utf-8
+set nobackup " 不生成备份文件
 
 "  ++++++++++++++++VIM 插件的相关配置+++++++++++++++++
 " NEDTree的配置
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
 map wm :NERDTreeToggle<CR>
+" 如果打开目录自动启动插件
 " 如果没有指定任何文件，当 vim 启动时，如何自动打开 NERDTree
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -68,8 +72,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 " 唯一打开的窗口是一个 NERDTree 使用q 关闭vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
 
 " 彩虹括号插件, 默认启用插件
 let g:rainbow_active = 1
