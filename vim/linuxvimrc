@@ -95,21 +95,31 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " tagbar 显示代码大纲
 " 安装之前请不要忘记安装Ctags，为了使用最新的版本，还是建议使用源码编译安装
 nmap <F8> :TagbarToggle<CR>
-" vim-buftabline 配置快速切换vim上的table
+
+" vim-buftabline 配置快速切换vim上的table , 详细的快捷键可以查看此处文档  http://vimdoc.sourceforge.net/htmldoc/windows.html
 set hidden
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
-" vim-format 自动格式化  python自动格式化请安装  install autopep8 
+" vim-format 自动格式化  
+" python自动格式化请安装  install autopep8 
+" xml/html 需要安装  tidy
 noremap <F3> :Autoformat<CR>
 let g:autoformat_verbosemode=1 "开启详细模式便于查错
+" sql文件格式化参数配置
 let g:formatdef_sqlformat = '"sqlformat --keywords upper -"' " 启动格式化sql文件 需要安装插件 pip3 install sqlparse
 let g:formatters_sql = ['sqlformat']
 
+" C 格式化文件参数
 let g:formatdef_clangformat_google = '"clang-format -style google -"'  " 自动格式化C 源码文件  安装需要额外插件 yum install clang
 let g:formatters_c = ['clangformat_google']
-
-
+" 若要禁用回退到 vim 的缩进文件，重新制表并删除尾随空格，请将以下变量设置为0
+" let g:autoformat_autoindent = 0
+" let g:autoformat_retab = 0
+" let g:autoformat_remove_trailing_spaces = 0
+" 指定自定义指定格式化程序，例如如下配置
+" let g:formatters_vue = ['eslint_local', 'stylelint']
+" let g:run_all_formatters_vue = 1
 
 
 
