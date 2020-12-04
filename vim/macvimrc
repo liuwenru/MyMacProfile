@@ -103,6 +103,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " tagbar 显示代码大纲
 " 安装之前请不要忘记安装Ctags，为了使用最新的版本，还是建议使用源码编译安装
+" 对golang的提示可能需要安装 go get -u github.com/jstemmer/gotags
 nmap <F8> :TagbarToggle<CR>
 
 " vim-buftabline 配置快速切换vim上的table , 详细的快捷键可以查看此处文档  http://vimdoc.sourceforge.net/htmldoc/windows.html
