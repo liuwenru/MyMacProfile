@@ -77,7 +77,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 彩虹括号插件, 默认启用插件
 let g:rainbow_active = 1
 
-" LeaderF 搜索配置
+" LeaderF 搜索配置 需要安装依赖 dnf install ripgrep  brew install ripgrep
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 
