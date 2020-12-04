@@ -12,7 +12,8 @@ Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 " 代码自动格式化
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
-
+" 搜索插件
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 " powerline状态栏
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
@@ -76,6 +77,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 彩虹括号插件, 默认启用插件
 let g:rainbow_active = 1
 
+" LeaderF 搜索配置
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+
+
 " 代码着色配置
 " vim-airline 插件配置
 let g:airline#extensions#tabline#enabled = 1
@@ -120,9 +126,6 @@ let g:formatters_c = ['clangformat_google']
 " 指定自定义指定格式化程序，例如如下配置
 " let g:formatters_vue = ['eslint_local', 'stylelint']
 " let g:run_all_formatters_vue = 1
-
-
-
 
 " " YouCompleteMe插件配置
 " 解决MAC环境下打开VIM使用系统自带的Python导致错误
