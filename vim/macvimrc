@@ -78,9 +78,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:rainbow_active = 1
 
 " LeaderF 搜索配置 需要安装依赖 dnf install ripgrep  brew install ripgrep
+" don't show the help in normal mode
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+" popup mode
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
-
 
 " 代码着色配置
 " vim-airline 插件配置
