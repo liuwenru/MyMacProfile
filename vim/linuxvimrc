@@ -12,6 +12,8 @@ Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 " 代码自动格式化
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
+" 代码自动化注释插件
+Plug 'preservim/nerdcommenter'
 " 搜索插件
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 " powerline状态栏
@@ -157,3 +159,11 @@ let g:go_highlight_operators = 1
 let g:go_def_mode = 'godef'
 let g:go_decls_includes = "func,type"
 
+" nerdcommenter 代码自动注释插件配置
+let g:NERDCreateDefaultMappings = 0 "因为默认leader cc 是冲突的所以关闭默认映射
+let g:NERDSpaceDelims = 1
+" [count]cc 注释往下多少行
+nmap cc <plug>NERDCommenterComment 
+nmap cu <plug>NERDCommenterUncomment
+" 在方法开头插入注释
+nmap cs <plug>NERDCommenterSexy 
