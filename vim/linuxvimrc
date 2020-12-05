@@ -163,7 +163,7 @@ let g:go_decls_includes = "func,type"
 let g:NERDCreateDefaultMappings = 0 "因为默认leader cc 是冲突的所以关闭默认映射
 let g:NERDSpaceDelims = 1
 " [count]cc 注释往下多少行
-nmap cc <plug>NERDCommenterComment 
+nmap cc <plug>NERDCommenterComment
 nmap cu <plug>NERDCommenterUncomment
 " 在方法开头插入注释
-nmap cs <plug>NERDCommenterSexy 
+nmap cs <plug>NERDCommenterSexy
