@@ -30,8 +30,6 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" Java 开发插件
-Plug 'artur-shaik/vim-javacomplete2'
 " 代码搜索插件 安装该插件前，需要先安装 ack ag gt rg
 " Plug 'dyng/ctrlsf.vim'
 
