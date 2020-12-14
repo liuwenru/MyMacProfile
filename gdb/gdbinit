@@ -2266,10 +2266,11 @@ end
 set history save
 set verbose off
 set print pretty on
-set print array off
+#set print array off
 set print array-indexes on
 set python print-stack full
-
+# 对字符串打印不限制长度
+set elements 0 
 # Start ------------------------------------------------------------------------
 
 python Dashboard.start()
