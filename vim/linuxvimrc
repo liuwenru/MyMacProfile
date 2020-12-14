@@ -26,6 +26,9 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " YouCompleteMe 自动生成ycm_extra_conf.py配置文件
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
+" Dockerfile plugin
+Plug 'ekalinin/Dockerfile.vim'
+
 " Golang 开发插件
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
