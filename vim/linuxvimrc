@@ -92,7 +92,8 @@ let g:Lf_UseCache = 0
 " popup mode
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
-
+" 搜索时使用方向建控制上下
+let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']} 
 " 代码着色配置
 " vim-airline 插件配置
 let g:airline#extensions#tabline#enabled = 1
@@ -180,3 +181,29 @@ nmap cs <plug>NERDCommenterSexy
 " 安装此插件需要安装   
 " linux     dnf install the_silver_searcher  ack ripgrep  https://github.com/monochromegane/the_platinum_searcher
 " mac       brew install the_silver_searcher ack ripgrep pt  https://github.com/monochromegane/the_platinum_searcher
+"
+"
+" vim-bookmarks  vim书签插件的使用
+" 将书签文件保存至当前目录下，这样下次打开时就可以直接使用
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+" 也可以自定义书签目录使用下面的方法进行指定
+" Finds the Git super-project directory.
+"  function! g:BMWorkDirFileLocation()
+"      let filename = 'bookmarks'
+"      let location = ''
+"      if isdirectory('.git')
+"          " Current work dir is git's work tree
+"          let location = getcwd().'/.git'
+"      else
+"          " Look upwards (at parents) for a directory named '.git'
+"          let location = finddir('.git', '.;')
+"      endif
+"      if len(location) > 0
+"          return location.'/'.filename
+"      else
+"          return getcwd().'/.'.filename
+"      endif
+"  endfunction
+
+
