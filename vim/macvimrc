@@ -26,12 +26,15 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " YouCompleteMe 自动生成ycm_extra_conf.py配置文件
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
+" Dockerfile plugin
+Plug 'ekalinin/Dockerfile.vim'
+
 " Golang 开发插件
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " 代码搜索插件 安装该插件前，需要先安装 ack ag gt rg
-" Plug 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim'
 
 call plug#end()
 
@@ -167,3 +170,10 @@ nmap cc <plug>NERDCommenterComment
 nmap cu <plug>NERDCommenterUncomment
 " 在方法开头插入注释
 nmap cs <plug>NERDCommenterSexy
+
+
+
+" ctrlsf 搜索插件配置
+" 安装此插件需要安装   
+" linux     dnf install the_silver_searcher  ack ripgrep  https://github.com/monochromegane/the_platinum_searcher
+" mac       brew install the_silver_searcher ack ripgrep pt  https://github.com/monochromegane/the_platinum_searcher
