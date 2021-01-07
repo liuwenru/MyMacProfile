@@ -62,7 +62,7 @@ syntax enable
 colorscheme onedark
 filetype plugin on
 " 配置显示横竖定位符
-set cursorcolumn
+" set cursorcolumn
 set cul
 set encoding=utf-8
 set nobackup " 不生成备份文件
