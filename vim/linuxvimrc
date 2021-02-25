@@ -149,7 +149,7 @@ let g:ycm_autoclose_preview_window_after_completion=1 " 补全后自动关机预
 let g:ycm_log_level = 'debug'
 " 语言符号库文件库配置文件
 let g:ycm_global_ycm_extra_conf='~/tools/mymacprofile/vim/ycm_extra_conf_linux.py'
-"let g:ycm_python_binary_path = 'python'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
+let g:ycm_python_binary_path = 'python3'  " 解决在python的visual_env中多个不同版本存在时出现依赖库不提示的问题
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 " set completeopt=menu,menuone " 解决YCM中自带的函数原型预览功能
 set completeopt-=preview
