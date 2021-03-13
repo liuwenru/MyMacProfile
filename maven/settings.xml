@@ -266,7 +266,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -277,7 +277,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -288,7 +288,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -299,7 +299,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -310,7 +310,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -321,7 +321,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -332,7 +332,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -343,7 +343,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
           <repository>
@@ -354,7 +354,7 @@ under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
           </repository>
         </repositories>
