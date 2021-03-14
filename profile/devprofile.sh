@@ -13,7 +13,7 @@ alias l='ls -lh'
 envname=$(uname)
 case ${envname} in
     Linux)
-        echo -n " welcome Linux dev............."
+        # echo -n " welcome Linux dev............."
         export GO111MODULE="on"
         export GOPATH=$HOME/workspace/golangworkspace
         export PATH=/usr/local/maven/bin:$PATH
@@ -22,7 +22,7 @@ case ${envname} in
         export TERM=xterm-256color
         ;;
     Darwin)
-        echo -n " welcome Mac dev............."
+        # echo -n " welcome Mac dev............."
         export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
         export MANPATH="/usr/local/man:/Users/liuwenru/tools/mactools/dash_docs/linux_manpages:$MANPATH"
         export GO111MODULE=on
