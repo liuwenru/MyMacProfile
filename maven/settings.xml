@@ -167,16 +167,14 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
-  <mirror>
-    <!-- 该镜像的唯一标识符。id用来区分不同的mirror元素。 -->
-    <id>central</id>
-    <!-- 镜像名称 -->
-    <name>sonatype</name>
-    <!-- 该镜像的URL。构建系统会优先考虑使用该URL，而非使用默认的服务器URL。 -->
-    <url>https://repo1.maven.org/maven2</url>
-    <!-- 被镜像的服务器的id。例如，如果我们要设置了一个Maven中央仓库（http://repo.maven.apache.org/maven2/）的镜像，就需要将该元素设置成central。这必须和中央仓库的id central完全一致。 -->
-    <mirrorOf>*</mirrorOf>
-  </mirror>
+     <!--
+    <mirror>
+      <id>central</id> 该镜像的唯一标识符。id用来区分不同的mirror元素。
+      <name>sonatype</name> 镜像名称
+      <url>https://repo1.maven.org/maven2</url> 该镜像的URL。构建系统会优先考虑使用该URL，而非使用默认的服务器URL
+      <mirrorOf>*</mirrorOf> 被镜像的服务器的id。例如，如果我们要设置了一个Maven中央仓库（http://repo.maven.apache.org/maven2/）的镜像，就需要将该元素设置成central。这必须和中央仓库的id central完全一致。
+    </mirror>
+    -->
   </mirrors>
 
   <!-- profiles
