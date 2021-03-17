@@ -3,8 +3,6 @@
 # Please adapt and uncomment the following lines:
 	name = liuwenru
 	email = ijarvis@sina.com
-[core]
-	excludesfile = /Users/liuwenru/.gitignore_global
 [commit]
 	template = /Users/liuwenru/.stCommitMsg
 [merge]
