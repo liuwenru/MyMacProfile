@@ -39,6 +39,9 @@ Plug 'dyng/ctrlsf.vim'
 " vim bookmark书签插件
 Plug 'MattesGroeger/vim-bookmarks'
 
+" vim asyncrun 异步执行命令插件
+Plug 'https://github.com/skywind3000/asyncrun.vim'
+
 call plug#end()
 
 
