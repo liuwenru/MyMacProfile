@@ -60,6 +60,7 @@ set backspace=2 " 兼容mac 下vim的退格键配置
 set so=5  " 屏幕滚动时在光标上下方保留5行预览代码
 set pastetoggle=<F10> " 解决在xshell等终端中使用ctrl+v黏贴时格式错乱的问题
 syntax enable
+set hlsearch " 高亮搜索内容
 colorscheme onedark
 filetype plugin on
 
@@ -202,6 +203,7 @@ nmap cs <plug>NERDCommenterSexy
 " 将书签文件保存至当前目录下，这样下次打开时就可以直接使用
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
+let g:bookmark_highlight_lines = 1  " 是否高亮标记的行
 " 也可以自定义书签目录使用下面的方法进行指定
 " Finds the Git super-project directory.
 "  function! g:BMWorkDirFileLocation()
@@ -230,6 +232,5 @@ set foldmethod=manual
 let g:lightline = {
             \ 'colorscheme': 'onedark',
             \ }
-
 
 
