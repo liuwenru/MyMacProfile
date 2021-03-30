@@ -7,7 +7,8 @@ Plug 'https://github.com/luochen1990/rainbow.git'
 " 代码文件着色插件
 Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'sheerun/vim-polyglot'
-
+" 代码大纲插件
+Plug 'https://github.com/preservim/tagbar.git'
 " 代码缩进显示
 Plug 'https://github.com/Yggdroot/indentLine.git'
 " 代码自动格式化
