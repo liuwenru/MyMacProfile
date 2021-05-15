@@ -3,3 +3,4 @@
 .factorypath
 .vim-bookmarks
 *.swp
+.vscode
