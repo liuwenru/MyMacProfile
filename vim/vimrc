@@ -231,7 +231,16 @@ set foldmethod=manual
 
 " lightline.vim vim状态栏配置
 let g:lightline = {
-            \ 'colorscheme': 'onedark',
-            \ }
+        \ 'colorscheme': 'onedark',
+        \ 'active': {
+        \   'right': [ [ 'lineinfo' ],
+        \              [ 'percent' ],
+        \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+        \ },
+        \ 'component': {
+        \   'charvaluehex': '0x%B'
+        \ },
+    \ }
 
-
+set laststatus=2
+set noshowmode
