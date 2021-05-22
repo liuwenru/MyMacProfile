@@ -8,13 +8,11 @@ alias svn='svn --username liuwr --password ${svnpassword}'
 alias ll='ls -lh'
 alias l='ls -lh'
 
-
-
 envname=$(uname)
 case ${envname} in
     Linux)
         # echo -n " welcome Linux dev............."
-        export GO111MODULE="on"
+        # export GO111MODULE="on"
         export GOPATH=$HOME/workspace/golangworkspace
         export PATH=/usr/local/maven/bin:$PATH
         export ANT_HOME=/usr/local/ant
@@ -25,7 +23,7 @@ case ${envname} in
         # echo -n " welcome Mac dev............."
         export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
         export MANPATH="/usr/local/man:/Users/liuwenru/tools/mactools/dash_docs/linux_manpages:$MANPATH"
-        export GO111MODULE=on
+        # export GO111MODULE=on
         export GOPATH=/Users/liuwenru/workspace/goworkspace
         export PATH=$GOPATH/bin:$PATH
         export ANT_HOME="/Users/liuwenru/tools/mactools/apache-ant-1.9.15"
