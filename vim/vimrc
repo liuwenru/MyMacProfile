@@ -19,7 +19,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " vim 下方的状态栏插件
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " 代码自动补齐插件
 Plug 'https://github.com/Valloric/YouCompleteMe.git'
