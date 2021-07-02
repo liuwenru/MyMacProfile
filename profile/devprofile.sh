@@ -21,7 +21,7 @@ case ${envname} in
         ;;
     Darwin)
         # echo -n " welcome Mac dev............."
-        export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+        export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
         export MANPATH="/usr/local/man:/Users/liuwenru/tools/mactools/dash_docs/linux_manpages:$MANPATH"
         # export GO111MODULE=on
         export GOPATH=/Users/liuwenru/workspace/goworkspace
